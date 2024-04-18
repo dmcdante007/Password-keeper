@@ -3,19 +3,20 @@ import ContextRead from "./store/context-read";
 
 const EnteredDataList = (props) =>{
     const ctx = useContext(ContextRead);
-    const removeItem = ()=>{
-        console.log('remveed')
-    }
     
+    
+    const editItem = ()=>{
+
+    }
     return(
     <React.Fragment>
         <ul>
             <h3>Records:</h3>
         {ctx.allTitlesAndPass.item.map((items)=>(
-        <li>
+        <li key={items.id}>
             {items.tit} {items.pas}
-            <button onClick={removeItem}>Delete</button>
-            <button>Edit</button>
+            <button type="button" onClick={()=>ctx.allTitlesAndPass.toDelete(items.id)}>Delete</button>
+            <button type="button" onClick={()=>editItem(items.id)}>Edit</button>
         </li>
         
     ))}

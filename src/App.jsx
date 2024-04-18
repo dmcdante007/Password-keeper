@@ -13,7 +13,7 @@ function App() {
 
   return (
     <ContextProvider>
-    {visible && <Modal/>}
+    {visible && <Modal onClose={viewHandler}/>}
     <Header onbuttonClick={viewHandler}/>
     <EnteredDataList/>
     </ContextProvider>
